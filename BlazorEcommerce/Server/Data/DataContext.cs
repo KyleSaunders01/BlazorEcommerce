@@ -50,14 +50,15 @@ namespace BlazorEcommerce.Server.Data
                 );
 
             modelBuilder.Entity<Product>().HasData(
-                  
+
                     new Product
                     {
                         Id = 1,
                         Title = "The Hitchhiker's Guide to the Galaxy",
                         Description = "The Hitchhiker's Guide to the Galaxy[note 1] (sometimes referred to as HG2G,[1] HHGTTG,[2] H2G2,[3] or tHGttG) is a comedy science fiction franchise created by Douglas Adams. Originally a 1978 radio comedy broadcast on BBC Radio 4, it was later adapted to other formats, including stage shows, novels, comic books, a 1981 TV series, a 1984 text-based computer game, and 2005 feature film.",
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
-                        CategoryId = 1
+                        CategoryId = 1,
+                        Featured = true
                     },
                     new Product
                     {
@@ -90,6 +91,7 @@ namespace BlazorEcommerce.Server.Data
                         Title = "Back to the Future",
                         Description = "Back to the Future is a 1985 American science fiction film directed by Robert Zemeckis. Written by Zemeckis and Bob Gale, it stars Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover, and Thomas F. Wilson. Set in 1985, the story follows Marty McFly (Fox), a teenager accidentally sent back to 1955 in a time-traveling DeLorean automobile built by his eccentric scientist friend Doctor Emmett \"Doc\" Brown (Lloyd). Trapped in the past, Marty inadvertently prevents his future parents' meeting—threatening his very existence—and is forced to reconcile the pair and somehow get back to the future.",
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
+                        Featured = true
                     },
                     new Product
                     {
@@ -116,6 +118,7 @@ namespace BlazorEcommerce.Server.Data
                         Title = "Diablo II",
                         Description = "Diablo II is an action role-playing hack-and-slash computer video game developed by Blizzard North and published by Blizzard Entertainment in 2000 for Microsoft Windows, Classic Mac OS, and macOS.",
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/d5/Diablo_II_Coverart.png",
+                        Featured = true
                     },
                     new Product
                     {
@@ -142,7 +145,7 @@ namespace BlazorEcommerce.Server.Data
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Nintendo-Super-Famicom-Set-FL.jpg",
                     }
 
-                );
+                ); ;
 
             modelBuilder.Entity<ProductVariant>().HasData(
                 new ProductVariant
@@ -261,5 +264,7 @@ namespace BlazorEcommerce.Server.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<ProductVariant> ProductVariants { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
